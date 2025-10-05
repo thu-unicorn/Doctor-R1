@@ -13,7 +13,7 @@ The proficiency of a human physician is defined by two core abilities: making ac
 
 ## ✨ Key Features
 
-* **Unified Clinical Skills:** The first agent framework to holistically integrate two core clinical skills—**strategic patient inquiry** and **accurate medical decision-making**—within a single model.
+* **Unified Clinical Skills:** The first agent framework to holistically integrate two core clinical skills, **strategic patient inquiry** and **accurate medical decision-making** within a single model.
 * **Experiential Reinforcement Learning:** A novel closed-loop framework where the agent learns and improves from an accumulating repository of its own high-quality experiences.
 * **Dual-Competency Reward System:** A sophisticated two-tiered reward architecture that separately optimizes for both conversational quality (soft skills) and diagnostic accuracy (hard skills), featuring a "safety-first" veto system.
 * **State-of-the-Art Performance:** Outperforms leading open-source models on challenging dynamic benchmarks like HealthBench and MAQuE with high parameter efficiency.
