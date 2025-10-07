@@ -75,7 +75,9 @@ Our ablation studies validate the critical contributions of our framework's key 
 
 ***Impact of Experience Retrieval Mechanism.*** The results show that our full retrieval mechanism with reward and novelty filtering provides a significant performance boost over both a no-experience baseline and a standard similarity-based retrieval, especially in communication skills.
 
-<img src="assets/radar_exp.jpg" width="60%">
+<div style="text-align: center;">
+  <img src="assets/radar_exp.jpg" style="width:60%;" />
+</div>
 
 ***Impact of Patient Agent Scaling.*** We observe a strong, positive correlation between the number of simulated patient interactions during training and the agent's final performance. This validates that our agentic framework effectively learns and improves from a large volume of diverse experiences.
 
