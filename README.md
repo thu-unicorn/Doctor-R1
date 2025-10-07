@@ -1,6 +1,14 @@
 # Doctor-R1: An AI Doctor Agent with Strategic Inquiry and Decision-Making
 
-[![Paper](https://img.shields.io/badge/Paper-arXiv:2510.04284-b31b1b.svg)](https://arxiv.org/abs/2510.04284) [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Model-Coming_Soon-yellow.svg)](https://huggingface.co/YourOrg/Doctor-R1) [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
+<p align="center">
+    <a href="https://arxiv.org/abs/2510.04284"> <img src="https://img.shields.io/badge/Paper-arXiv:2510.04284-b31b1b.svg" alt="Paper">
+    </a>
+    <a href="https://huggingface.co/Doctor-R1"> <img src="https://img.shields.io/badge/%F0%9F%A4%97%20Model-Coming_Soon-yellow.svg" alt="Hugging Face">
+    </a>
+    <a href="https://github.com/YourUsername/Doctor-R1/blob/main/LICENSE">
+        <img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="License">
+    </a>
+</p>
 
 > **Note:** The official code and model weights are currently being prepared for public release. Please **star ⭐ and watch 👀 this repository** to be notified when they are available!
 
@@ -67,7 +75,7 @@ Our ablation studies validate the critical contributions of our framework's key 
 
 ***Impact of Experience Retrieval Mechanism.*** The results show that our full retrieval mechanism with reward and novelty filtering provides a significant performance boost over both a no-experience baseline and a standard similarity-based retrieval, especially in communication skills.
 
-<img src="assets/radar_exp.jpg" style="zoom: 25%;" />
+<img src="assets/radar_exp.jpg" width="60%">
 
 ***Impact of Patient Agent Scaling.*** We observe a strong, positive correlation between the number of simulated patient interactions during training and the agent's final performance. This validates that our agentic framework effectively learns and improves from a large volume of diverse experiences.
 
