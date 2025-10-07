@@ -46,9 +46,12 @@ For a detailed breakdown of results, including ablations and human evaluation, p
 If you find our work useful in your research, please consider citing our paper:
 
 ```bibtex
-@article{DoctorR1,
-  title={{Doctor-R1: An AI Doctor Agent with Strategic Inquiry and Decision-Making}},
-  author={Yunghwei Lai},
-  journal={arXiv preprint arXiv:2509.XXXXX},
-  year={2025}
+@misc{lai2025doctorr1masteringclinicalinquiry,
+      title={Doctor-R1: Mastering Clinical Inquiry with Experiential Agentic Reinforcement Learning}, 
+      author={Yunghwei Lai and Kaiming Liu and Ziyue Wang and Weizhi Ma and Yang Liu},
+      year={2025},
+      eprint={2510.04284},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2510.04284}, 
 }
