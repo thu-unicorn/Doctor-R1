@@ -1,13 +1,15 @@
 # Doctor-R1: An AI Doctor Agent with Strategic Inquiry and Decision-Making
 
 <p align="center">
-    <a href="https://arxiv.org/abs/2510.04284"> <img src="https://img.shields.io/badge/Paper-arXiv:2510.04284-b31b1b.svg" alt="Paper">
-    </a>
-    <a href="https://huggingface.co/Doctor-R1"> <img src="https://img.shields.io/badge/%F0%9F%A4%97%20Model-Coming_Soon-yellow.svg" alt="Hugging Face">
-    </a>
-    <a href="https://github.com/YourUsername/Doctor-R1/blob/main/LICENSE">
-        <img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="License">
-    </a>
+  <a href="https://arxiv.org/abs/2510.04284">
+    <img src="https://img.shields.io/badge/Paper-arXiv:2510.04284-b31b1b.svg" alt="Paper">
+  </a>
+  <a href="https://huggingface.co/Doctor-R1">
+    <img src="https://img.shields.io/badge/%F0%9F%A4%97%20Model-Coming_Soon-yellow.svg" alt="Hugging Face">
+  </a>
+  <a href="https://github.com/thu-unicorn/Doctor-R1/blob/main/LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License">
+  </a>
 </p>
 
 > **Note:** The official code and model weights are currently being prepared for public release. Please **star ⭐ and watch 👀 this repository** to be notified when they are available!
