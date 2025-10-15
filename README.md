@@ -93,7 +93,7 @@ We are in the process of cleaning up and packaging the code and model weights fo
 
 -   [ ] The full source code for our **Experiential Agentic Reinforcement Learning** framework.
 -   [ ] Training configurations and evaluation scripts to reproduce our key results.
--   [ ] The final **\textsc{Doctor-R1}** model weights, which will be hosted on the Hugging Face Hub.
+-   [ ] The final **Doctor-R1** model weights, which will be hosted on the Hugging Face Hub.
 
 Thank you for your interest and patience! Please **star ⭐ and watch 👀 this repository** to be notified of the release.
 
