@@ -1,4 +1,4 @@
-# Doctor-R1: An AI Doctor Agent with Strategic Inquiry and Decision-Making
+# Doctor-R1: Mastering Clinical Inquiry with Experiential Agentic Reinforcement Learning
 
 <p align="center">
   <a href="https://arxiv.org/abs/2510.04284">
