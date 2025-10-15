@@ -14,7 +14,7 @@
 
 > **Note:** The official code and model weights are currently being prepared for public release. Please **star ⭐ and watch 👀 this repository** to be notified when they are available!
 
-**Doctor-R1** is an AI doctor agent trained to conduct strategic, multi-turn patient inquiries to guide its diagnostic decision-making. Unlike traditional models that excel at static medical QA, Doctor-R1 is designed to master the complete, dynamic consultation process, unifying the two core skills of a human physician: communication and clinical reasoning.
+**Doctor-R1** is an AI doctor agent trained to conduct strategic, multi-turn patient inquiries to guide its diagnostic decision-making. Unlike traditional models that excel at static medical QA, Doctor-R1 is designed to master the complete, dynamic consultation process, unifying the two core skills of a human physician: communication and decision-making.
 
 ![](assets/methodology.jpg)
 
