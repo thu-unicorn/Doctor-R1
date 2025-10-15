@@ -123,7 +123,7 @@ If you find our work useful in your research, please consider citing our paper:
 ## 💬 Contact & Questions
 
 For collaborations or inquiries, please contact [**laiyunghwei@gmail.com**](mailto:laiyunghwei@gmail.com).
-You’re also welcome to open an issue or join the discussion in this repository, we value your insights and contributions to improving **Doctor-R1**.
+You’re also welcome to open an issue or join the discussion in this repository, we value your insights and contributions to **Doctor-R1**.
 
 Stay tuned and join our community as we push the boundaries of intelligent healthcare. 🧠 
 Together, let’s make medical AI safer, smarter, and more human. 🤝
