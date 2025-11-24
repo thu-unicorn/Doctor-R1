@@ -66,7 +66,7 @@ The detailed breakdown of **HealthBench Main (Dynamic Consultation)** is as belo
 
 ## 👥 Human Evaluation
 
-To validate that our quantitative results align with user experience, we conducted a pairwise human preference evaluation against other leading models. The results show a decisive preference for Doctor-R1, especially in patient-centric metrics.
+To validate that our quantitative results align with patient user experience and clinical expert validation, we conducted a comprehensive human evaluation, with pairwise human preference evaluation against other leading models, and Likert scale. The results show a dominant preference for Doctor-R1, especially in patient-centric metrics.
 
 ![](assets/human.png)
 
