@@ -61,7 +61,9 @@ git clone https://github.com/thu-unicorn/Doctor-R1.git
 # 3. Integration: Copy Doctor-R1 files into the VeRL directory
 # This command assumes both folders are in the same parent directory.
 # We overwrite the specific files in verl with our custom implementations.
-cp -r Doctor-R1/verl/* verl/verl/ 
+cp -r Doctor-R1/verl/trainer verl/verl/
+cp -r Doctor-R1/verl/interactions verl/verl/
+cp -r Doctor-R1/verl/utils/reward_score verl/verl/utils
 cp Doctor-R1/run_doctor_multirollout.sh verl/
 
 # 4. Install dependencies
