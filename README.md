@@ -22,7 +22,7 @@
 
 
 ## 📰 News
-* **[Dec 24, 2025]** 🚀 **Code Release:** We have released the core training code and the experiential reinforcement learning framework! See the [Installation](#-installation--usage) section below to get started.
+* **[Dec 24, 2025]** 🚀 **Code Release:** We have released the core training code and the experiential reinforcement learning framework! See the [Installation](##-installation--usage) section below to get started.
 
 * **[Oct 5, 2025]** 👨‍⚕️ **Expert Validation:** Licensed physicians verified that Doctor-R1's clinical competence matches proprietary models like GPT-5. Notably, experts rated **83.87%** of its retrieved experiences as *"Clinically Helpful"* with **0%** harmful content.
 
