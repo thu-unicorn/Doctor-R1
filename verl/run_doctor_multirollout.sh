@@ -1,27 +1,14 @@
-# run on 8xH100
-# make sure your current working directory is the root of the project
-# export HIP_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
-# export ROCR_VISIBLE_DEVICES=$HIP_VISIBLE_DEVICES
 export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6
-# export NCCL_DEBUG=INFO
-# export NCCL_P2P_DISABLE=1   
-# export NCCL_IB_DISABLE=1    
-# export NCCL_SOCKET_IFNAME=eth0 
-# export NCCL_SHM_DISABLE=1
 export HYDRA_FULL_ERROR=1
 export VERL_LOGGING_LEVEL=DEBUG
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
-# export WANDB_MODE=offline
-
 export RAY_IGNORE_UNHANDLED_ERRORS=1
 export CUDA_LAUNCH_BLOCKING=1
 export TORCH_USE_CUDA_DSA=1
-# export VLLM_ATTENTION_BACKEND=XFORMERS
-export GLOO_SOCKET_IFNAME=eth0  # 或其它非 lo 的网络接口: eth0
+export GLOO_SOCKET_IFNAME=eth0 
 export NCCL_DEBUG=INFO
 export GLOO_DEBUG=1
 export API_PARALLEL=60
-# export VLLM_USE_V1=0
 
 set -x
 
@@ -29,38 +16,29 @@ ulimit -n 65535
 experiment_name='Qwen3-8B-grpo-xm-1k-1129'
 export TRIAL_NAME=$experiment_name
 
-# PROJECT_DIR="$(pwd)"
 CONFIG_PATH=/mnt/data2/liyonghui/verl0715/verl/examples/sglang_multiturn/config
 CONFIG_NAME='doctor_multiturn_grpo_w_interaction'
-TRAIN_BATCH_SIZE=${TRAIN_BATCH_SIZE:-224}    # 512、448、384
+TRAIN_BATCH_SIZE=${TRAIN_BATCH_SIZE:-224}
 MICRO_BATCH_SIZE=${MICRO_BATCH_SIZE:-8}
 OFFLOAD=${OFFLOAD:-False}
 
 # Algorithm
-adv_estimator=grpo  # gae, reinforce_plus_plus , grpo, remax
+adv_estimator=grpo
 use_kl_in_reward=False
 
 # Data Config
-# train_files=/mnt/data2/liyonghui/data/gsm8k_interaction2/train.parquet
-# val_files=/mnt/data2/liyonghui/data/gsm8k_interaction2/test.parquet
-# train_files=/mnt/data2/liyonghui/data/json_data_en_align_think_generated_rl_parquet_5000/train.parquet
-# val_files=/mnt/data2/liyonghui/data/json_data_en_align_think_generated_rl_parquet_5000/valid.parquet
-train_files=/mnt/data2/liyonghui/Patient-zero/项目结题/traindata/呼吸科_1000_new_251129.jsonl
-val_files=/mnt/data2/liyonghui/Patient-zero/项目结题/traindata/呼吸科_200_new_251129.jsonl
-train_batch_size=256   #896     # 1024、512、448、384
-max_prompt_length=512   # 1024
-max_response_length=512    # $((1024 * 3))   # 1024 * 3
+train_files=./traindata/train.jsonl
+val_files=./traindata/valid.jsonl
+max_prompt_length=512  
+max_response_length=512   
 filter_overlong_prompts=True
 data_truncation='error'
-model_path=/mnt/data2/liyonghui/models/Llama-3.1-8B-Instruct
-# model_path=/mnt/data2/liyonghui/sft/marge_ckpts/Qwen2.5-7B-Instruct-SFT-MEDDG-think-ep15-eval
-
-# /mnt/data2/liyonghui/verl/checkpoints/sft_meddialog/qwen_7b_meddialog/global_step_22
+model_path=Qwen3-8B
 
 # Experience Config
 experience_enable=False
-# experience_embedding_model=/mnt/data2/liyonghui/ckpts/jina-embeddings-v2-base-zh
-experience_file_path=/mnt/data2/liyonghui/verl0715/verl/verl/trainer/experience/${experiment_name}.jsonl
+experience_embedding_model=jina-embeddings-v2-base-zh
+experience_file_path=./experience/${experiment_name}.jsonl
 experience_retrieval_top_k=2
 experience_rerank_top_n=30
 experience_use_action_suggestion=True
@@ -73,23 +51,18 @@ data_return_raw_chat=True
 
 # Interaction Config
 multi_turn_enable=True
-interaction_config_path=/mnt/data2/liyonghui/verl0715/verl/examples/sglang_multiturn/config/interaction_config/doctor_interaction_config.yaml
-tool_config_path=/mnt/data2/liyonghui/verl0715/verl/examples/sglang_multiturn/config/tool_config/doctor_tool_config.yaml
+interaction_config_path=verl/examples/sglang_multiturn/config/interaction_config/doctor_interaction_config.yaml
+tool_config_path=verl/examples/sglang_multiturn/config/tool_config/doctor_tool_config.yaml
 max_user_turns=1
 max_assistant_turns=1
 
 # Actor / Rollout (Policy Model)
 actor_optim_lr=1e-6
 actor_use_remove_padding=False
-# actor_ppo_mini_batch_size=256   # 256、128  
-# actor_ppo_micro_batch_size_per_gpu=18   # 16、8  - change
-# actor_fsdp_config_param_offload=False
-# actor_fsdp_config_optimizer_offload=False   
 actor_use_kl_loss=False
-actor_enable_gradient_checkpointing=True   # True
+actor_enable_gradient_checkpointing=True
 actor_enable_activation_offloading=True
-# actor_log_prob_micro_batch_size_per_gpu=8  # 8
-actor_tensor_model_parallel_size=1   # 2
+actor_tensor_model_parallel_size=1
 actor_rollout_name=sglang
 actor_rollout_mode=sync
 actor_gpu_memory_utilization=0.7
@@ -103,25 +76,23 @@ actor_fsdp_config_model_dtype=bfloat16
 # Critic (Reward Model)
 critic_optim_lr=1e-5
 critic_use_remove_padding=True
-critic_enable_gradient_checkpointing=True   # True
-critic_ppo_micro_batch_size_per_gpu=16   # 32、16   - change
+critic_enable_gradient_checkpointing=True 
+critic_ppo_micro_batch_size_per_gpu=16 
 critic_fsdp_config_param_offload=False
 critic_fsdp_config_optimizer_offload=False
 critic_warmup=0
 
-
 # Reward
 reward_manager=parallel
 
-
 # logger
-logger=['console','wandb']    # ['console','wandb']
+logger=['console','wandb'] 
 project_name='verl_doctor_rl'
 n_gpus_per_node=7
 nnodes=1 
 save_freq=4
 test_freq=2
-total_epochs=10   # 15
+total_epochs=10
 
 
 python3 -m verl.trainer.main_ppo \
