@@ -13,7 +13,7 @@
 </p>
 
 
-> **Note:** The official code and model weights are currently being prepared for public release. Please **star ⭐ and watch 👀 this repository** to be notified when they are available!
+> **Note:** The official code and model weights are now available! Please star ⭐ this repository to stay updated.
 
 **Doctor-R1** is an AI doctor agent trained to conduct strategic, multi-turn patient inquiries to guide its diagnostic decision-making. Unlike traditional models that excel at static medical QA, Doctor-R1 is designed to master the complete, dynamic consultation process, unifying the two core skills of a human physician: communication and decision-making.
 
@@ -22,10 +22,17 @@
 
 
 ## 📰 News
+* **[Dec 24, 2025]** 🚀 **Code Release:** We have released the core training code and the experiential reinforcement learning framework! See the [Installation](#-installation--usage) section below to get started.
 
-* **[Oct 5, 2025]** 🔥 We have released the paper for **Doctor-R1**. Doctor-R1 sets a new state-of-the-art for open-source medical agents (8B) on the challenging **HealthBench** benchmark, outperforming leading proprietary models like GPT-4.1 and Grok-4.
-* **[Oct 5, 2025]** 🔥 On the **MAQuE** benchmark, Doctor-R1 matches GPT-4.1's accuracy while achieving a vastly superior **Empathy** score (93.80 vs. 75.20).
-* **[Oct 5, 2025]** 🔥 Our human evaluation confirms a strong preference for Doctor-R1, which achieves a remarkable **92.5% win rate** in Empathy against strong competitors.
+* **[Oct 5, 2025]** 👨‍⚕️ **Expert Validation:** Licensed physicians verified that Doctor-R1's clinical competence matches proprietary models like GPT-5. Notably, experts rated **83.87%** of its retrieved experiences as *"Clinically Helpful"* with **0%** harmful content.
+
+* **[Oct 5, 2025]** 🔥 We have released the paper for Doctor-R1. Doctor-R1 sets a new state-of-the-art for open-source medical agents (8B) on the challenging HealthBench benchmark, outperforming leading proprietary models like GPT-4.1 and Grok-4.
+
+* **[Oct 5, 2025]** 🔥 On the MAQuE benchmark, Doctor-R1 matches GPT-4.1's accuracy while achieving a vastly superior Empathy score (**93.80** vs. 75.20).
+
+* **[Oct 5, 2025]** 👥 **Patient Preference:** Our human evaluation confirms a strong preference for Doctor-R1, which achieves a remarkable **92.5% win rate** in Empathy against strong competitors.
+
+  
 
 ## ✨ Key Features
 
@@ -37,7 +44,40 @@
 
 * **State-of-the-Art Performance:** Outperforms leading open-source models on challenging dynamic benchmarks like HealthBench and MAQuE with high parameter efficiency.
 
-  
+
+
+
+## 🛠️ Installation & Usage
+
+Doctor-R1 is built upon the [VeRL (Volcengine Reinforcement Learning)](https://github.com/volcengine/verl) framework. Our implementation serves as a "plugin" extension to the official VeRL codebase. To use Doctor-R1, you need to clone the official VeRL repository and then overlay our custom implementation (trainers, interactions, utils) onto it.
+
+```bash
+# 1. Clone the official VeRL repository
+git clone https://github.com/volcengine/verl.git
+
+# 2. Clone the Doctor-R1 repository (this repo)
+git clone https://github.com/thu-unicorn/Doctor-R1.git
+
+# 3. Integration: Copy Doctor-R1 files into the VeRL directory
+# This command assumes both folders are in the same parent directory.
+# We overwrite the specific files in verl with our custom implementations.
+cp -r Doctor-R1/verl/* verl/verl/ 
+cp Doctor-R1/run_doctor_multirollout.sh verl/
+
+# 4. Install dependencies
+cd verl
+pip install -e .
+```
+
+Once set up, you can run the multi-rollout training process using our provided script:
+
+```bash
+bash run_doctor_multirollout.sh
+```
+
+
+
+
 
 ## 🏆 Leaderboards
 
@@ -87,16 +127,6 @@ Our ablation studies validate the critical contributions of our framework's key 
 ![](assets/patient_scaling.png)
 
 
-
-## 🚀 Code and Model Release (Coming Soon!)
-
-We are in the process of cleaning up and packaging the code and model weights for a public release. We plan to make the following assets available in this repository shortly:
-
--   [ ] The full source code for our **Experiential Agentic Reinforcement Learning** framework.
--   [ ] Training configurations and evaluation scripts to reproduce our key results.
--   [ ] The final **Doctor-R1** model weights, which will be hosted on the Hugging Face Hub.
-
-Thank you for your interest and patience! Please **star ⭐ and watch 👀 this repository** to be notified of the release.
 
 
 
