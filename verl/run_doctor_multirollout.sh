@@ -16,7 +16,7 @@ ulimit -n 65535
 experiment_name='Qwen3-8B-grpo-xm-1k-1129'
 export TRIAL_NAME=$experiment_name
 
-CONFIG_PATH=/mnt/data2/liyonghui/verl0715/verl/examples/sglang_multiturn/config
+CONFIG_PATH=verl/config
 CONFIG_NAME='doctor_multiturn_grpo_w_interaction'
 TRAIN_BATCH_SIZE=${TRAIN_BATCH_SIZE:-224}
 MICRO_BATCH_SIZE=${MICRO_BATCH_SIZE:-8}
@@ -51,8 +51,8 @@ data_return_raw_chat=True
 
 # Interaction Config
 multi_turn_enable=True
-interaction_config_path=verl/examples/sglang_multiturn/config/interaction_config/doctor_interaction_config.yaml
-tool_config_path=verl/examples/sglang_multiturn/config/tool_config/doctor_tool_config.yaml
+interaction_config_path=verl/config/interaction_config/doctor_interaction_config.yaml
+tool_config_path=verl/config/tool_config/doctor_tool_config.yaml
 max_user_turns=1
 max_assistant_turns=1
 

@@ -1,0 +1,4 @@
+interaction:
+  - name: "kamed"
+    class_name: "verl.interactions.doctor_interaction.DoctorInteraction"
+    config: {}

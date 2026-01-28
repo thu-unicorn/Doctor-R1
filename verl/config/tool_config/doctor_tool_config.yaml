@@ -1,0 +1,16 @@
+tools:
+  - class_name: "verl.tools.doctor_tool.DoctorTool"
+    config: 
+      type: native
+    tool_schema:
+      type: "function"
+      function:
+        name: "calc_doctor_reward"
+        description: "A tool for calculating the reward of doctoragent."
+        parameters:
+          type: "object"
+          properties:
+            answer:
+              type: "string"
+              description: "The model's answer to the patient treatment, must be string"
+          required: ["answer"]
