@@ -1,6 +1,9 @@
 # Doctor-R1: Mastering Clinical Inquiry with Experiential Agentic Reinforcement Learning
 
 <p align="center">
+	<a href="https://iclr.cc/virtual/2026/poster/10006814">
+    <img src="https://img.shields.io/badge/Publish-ICLR%202026-4b44ce.svg" alt="ICLR 2026">
+  </a>
   <a href="https://arxiv.org/abs/2510.04284">
     <img src="https://img.shields.io/badge/Paper-arXiv:2510.04284-b31b1b.svg" alt="Paper">
   </a>
@@ -13,7 +16,9 @@
 </p>
 
 
-> **Note:** The official code and model weights are now available! Please star ⭐ this repository to stay updated.
+
+
+> 🎉 **Accepted to ICLR 2026!** The official code and model weights are now available. Please star ⭐ this repository to stay updated with our latest releases and conference presentations.
 
 **Doctor-R1** is an AI doctor agent trained to conduct strategic, multi-turn patient inquiries to guide its diagnostic decision-making. Unlike traditional models that excel at static medical QA, Doctor-R1 is designed to master the complete, dynamic consultation process, unifying the two core skills of a human physician: communication and decision-making.
 
@@ -22,6 +27,8 @@
 
 
 ## 📰 News
+* **[Jan 26, 2026]** 🎉 **Doctor-R1 has been accepted to ICLR 2026!** We are thrilled to share our work with the community. See you at the conference!
+
 * **[Dec 24, 2025]** 🚀 **Code Release:** We have released the core training code and the experiential reinforcement learning framework! See the [Installation](#-installation--usage) section below to get started.
 
 * **[Dec 4, 2025]** 👨‍⚕️ **Expert Validation:** Licensed physicians verified that Doctor-R1's clinical competence matches proprietary models like GPT-5. Notably, experts rated **83.87%** of its retrieved experiences as *"Clinically Helpful"* with 0% harmful content.
@@ -137,14 +144,12 @@ Our ablation studies validate the critical contributions of our framework's key 
 If you find our work useful in your research, please consider citing our paper:
 
 ```bibtex
-@misc{lai2025doctorr1masteringclinicalinquiry,
-      title={Doctor-R1: Mastering Clinical Inquiry with Experiential Agentic Reinforcement Learning}, 
-      author={Yunghwei Lai and Kaiming Liu and Ziyue Wang and Weizhi Ma and Yang Liu},
-      year={2025},
-      eprint={2510.04284},
-      archivePrefix={arXiv},
-      primaryClass={cs.AI},
-      url={https://arxiv.org/abs/2510.04284}, 
+@inproceedings{
+    lai2026doctorr,
+    title={Doctor-R1: Mastering Clinical Inquiry with Experiential Agentic Reinforcement Learning},
+    author={Yunghwei Lai and Kaiming Liu and Ziyue Wang and Weizhi Ma and Yang Liu},
+    booktitle={The Fourteenth International Conference on Learning Representations},
+    year={2026}
 }
 
 ```
